@@ -1,0 +1,20 @@
+@import url(./assets/vendor/normalize.css);
+@import url(./assets/fonts/Inter/inter.css);
+@import "./styles/palette";
+
+.page {
+  width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $main-background;
+}
