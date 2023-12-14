@@ -1,13 +1,28 @@
 @import "../../styles/extends";
 
 .card-list {
-  @extend %ul;
-  display: grid;
+  min-height: calc(100vh - 193px);
+  @extend %flex-column;
   gap: 30px;
-  grid-template-columns: repeat(auto-fill,minmax(290px,1fr));
+  align-items: center;
+  justify-content: space-between;
 
   @media screen and (max-width: 650px) {
     & {
+      grid-template-columns: 1fr;
+      min-height: calc(100vh - 230px);
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill,minmax(290px,1fr));
+  }
+
+  @media screen and (max-width: 650px) {
+    &__container {
       grid-template-columns: 1fr;
     }
   }

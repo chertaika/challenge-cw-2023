@@ -13,6 +13,13 @@
   bottom: 0;
   z-index: 10;
 
+  @media screen and (max-width: 650px) {
+    & {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
   &__company-link {
     @extend %link;
   }
@@ -27,6 +34,6 @@
 
   &__signature {
     @extend %link;
-    @include font($size: 17px, $line-height: 1.2);
+    @include font($size: 17px, $line-height: 1);
   }
 }

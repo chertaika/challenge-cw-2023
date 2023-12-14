@@ -1,0 +1,44 @@
+@import "../../styles/palette";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.pagination {
+  @extend %ul;
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  justify-content: space-between;
+
+  &__item {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @extend %link;
+    @include font($size: 15px, $line-height: 1.2);
+  }
+
+  &__item_type_arrow-left {
+    @include background-img($url: "../../assets/images/left.svg", $size: 15px);
+  }
+
+  &__item_type_arrow-right {
+    @include background-img($url: "../../assets/images/right.svg", $size: 15px);
+  }
+
+  &__item_type_ellipsis {
+    pointer-events: none;
+  }
+
+  &__item_disabled {
+    pointer-events: none;
+    opacity: .5;
+  }
+
+  &__item_selected {
+    border-radius: 50%;
+    background-color: $card-background;
+    pointer-events:none;
+  }
+}

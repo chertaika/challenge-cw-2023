@@ -2,19 +2,6 @@
 @import url(./assets/fonts/Inter/inter.css);
 @import "./styles/palette";
 
-
-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-body::-webkit-scrollbar-track {
-  background: $subtitle;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: $card-background;
-}
-
 .page {
   width: 100%;
   font-family: 'Inter', Arial, sans-serif;
