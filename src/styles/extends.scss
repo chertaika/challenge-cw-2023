@@ -1,0 +1,15 @@
+%links {
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+%section {
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
