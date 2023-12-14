@@ -4,10 +4,25 @@
   $size,
   $line-height,
   $weight: 400,
+  $color: #fff,
 ) {
+  margin: 0;
   font-family: ($family, Arial, sans-serif);
   font-style: $style;
   font-size: $size;
   line-height: $line-height;
   font-weight: $weight;
+  color: $color;
+}
+
+@mixin background-img(
+  $url,
+  $size,
+  $repeat: no-repeat,
+  $position: center,
+) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
 }

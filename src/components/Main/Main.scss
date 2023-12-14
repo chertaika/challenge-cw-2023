@@ -1,0 +1,7 @@
+@import "../../styles/extends";
+
+.main {
+  @extend %main-blocks;
+  margin-top: 70px;
+  margin-bottom: 83px;
+}

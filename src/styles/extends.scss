@@ -1,15 +1,40 @@
-%links {
+%link {
   text-decoration: none;
   transition: .3s;
+  display: block;
+  cursor: pointer;
 
   &:hover {
     opacity: .7;
   }
 }
 
-%section {
+%button {
+  border: none;
+  transition: .3s;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+%main-blocks {
   max-width: 1280px;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+}
+
+%ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
 }

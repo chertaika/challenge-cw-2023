@@ -1,0 +1,44 @@
+@import "../../styles/palette";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.card {
+  @extend %flex-column;
+  background-color: $card-background;
+  border-radius: 10px;
+  position: relative;
+
+  &__img {
+    display: block;
+    object-position: center;
+    object-fit: contain;
+    width: 100%;
+    aspect-ratio: 8/5;
+  }
+
+  &__desc {
+    @extend %flex-column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  &__title {
+    @include font($size: 15px, $line-height: 1.2);
+  }
+
+  &__option {
+    @include font($size: 13px, $line-height: 1.2, $color: $subtitle);
+  }
+
+  &__delete-btn {
+    @extend %button;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $button-background;
+    @include background-img($url: "../../assets/images/close-button.svg", $size: 15px);
+  }
+}
