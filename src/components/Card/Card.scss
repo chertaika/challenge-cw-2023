@@ -7,13 +7,21 @@
   background-color: $card-background;
   border-radius: 10px;
   position: relative;
+  overflow: hidden;
+  transition: .45s;
+  transform: scale(1, 1);
+  transform-origin: center center;
+
+  &_deleted {
+    transform: scale(0, 0);
+  }
 
   &__img {
     display: block;
     object-position: center;
     object-fit: contain;
     width: 100%;
-    aspect-ratio: 8/5;
+    aspect-ratio: 3/2;
   }
 
   &__desc {

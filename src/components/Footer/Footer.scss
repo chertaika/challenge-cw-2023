@@ -15,7 +15,6 @@
 
   @media screen and (max-width: 650px) {
     & {
-      flex-direction: column;
       gap: 20px;
     }
   }
@@ -32,8 +31,21 @@
     display: block;
   }
 
+  @media screen and (max-width: 650px) {
+    &__company-logo {
+      width: 135px;
+      height: 32px;
+    }
+  }
+
   &__signature {
     @extend %link;
-    @include font($size: 17px, $line-height: 1);
+    @include font($size: 17px, $line-height: 1, $color: $subtitle);
+  }
+
+  @media screen and (max-width: 650px) {
+    &__signature {
+      font-size: 13px;
+    }
   }
 }

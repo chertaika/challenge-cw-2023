@@ -18,6 +18,8 @@ const Pagination = ({
     return null;
   }
 
+  const getId = index => index / Math.random();
+
   const onNext = () => {
     onPageChange(currentPage + 1);
   };
@@ -34,16 +36,16 @@ const Pagination = ({
       <li>
         <div className={`pagination__item pagination__item_type_arrow-left ${currentPage === 1 ? 'pagination__item_disabled' : ''}`} onClick={onPrevious} />
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber, index) => {
         if (pageNumber === ELLIPSIS) {
           return (
-            <li>
+            <li key={getId(index)}>
               <div className="pagination__item pagination__item_type_ellipsis">{ELLIPSIS}</div>
             </li>
           );
         }
         return (
-          <li>
+          <li key={getId(index)}>
             <div
               className={`pagination__item ${pageNumber === currentPage ? 'pagination__item_selected' : ''}`}
               onClick={() => onPageChange(pageNumber)}
