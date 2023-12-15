@@ -5,17 +5,22 @@ import getInitialData from '../../utils/Api';
 import { ERROR } from '../../utils/constants';
 import Main from '../Main/Main';
 import useFormatData from '../../hooks/useFormatData';
+import Preloader from '../Preloader/Preloader';
 
 const App = () => {
   const [cards, setCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(false);
     (async () => {
       try {
         const data = await getInitialData();
         setCards(useFormatData(data));
       } catch (error) {
         console.log(`${ERROR}: ${error}`);
+      } finally {
+        setIsLoading(true);
       }
     })();
   }, []);
@@ -23,7 +28,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <Main cards={cards} />
+      {!isLoading
+        ? <Preloader size="large" />
+        : <Main cards={cards} />}
       <Footer />
     </>
   );

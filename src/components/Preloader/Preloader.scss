@@ -1,0 +1,13 @@
+@import "../../styles/palette";
+@import "../../styles/mixins";
+
+.preloader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $main-grey;
+  @include background-img($url: "../../assets/images/load.svg", $size: 100px);
+  z-index: 5;
+}
