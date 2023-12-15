@@ -1,10 +1,12 @@
+@import "./palette";
+
 @mixin font(
   $family: 'Inter',
   $style: normal,
   $size,
-  $line-height,
+  $line-height: 1.2,
   $weight: 400,
-  $color: #fff,
+  $color: $white,
 ) {
   margin: 0;
   font-family: ($family, Arial, sans-serif);

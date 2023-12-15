@@ -22,12 +22,14 @@ const Card = ({
         <p className="card__option">{`Размер: ${filesize}`}</p>
         <p className="card__option">{`Категория: ${category}`}</p>
       </div>
-      <button
-        className="card__delete-btn"
-        type="button"
-        aria-label="кнопка удаления карточки"
-        onClick={handleDeleteCard}
-      />
+      <div className="card__btn-overlay">
+        <button
+          className="card__delete-btn"
+          type="button"
+          aria-label="кнопка удаления карточки"
+          onClick={handleDeleteCard}
+        />
+      </div>
     </article>
   );
 };

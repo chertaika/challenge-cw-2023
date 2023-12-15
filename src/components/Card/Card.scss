@@ -31,22 +31,29 @@
   }
 
   &__title {
-    @include font($size: 15px, $line-height: 1.2);
+    @include font($size: 15px);
   }
 
   &__option {
-    @include font($size: 13px, $line-height: 1.2, $color: $subtitle);
+    @include font($size: 13px, $color: $subtitle);
+  }
+
+  &__btn-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(225deg, $button-background 0%, $button-background 50%, transparent 50%, transparent 100%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
   }
 
   &__delete-btn {
     @extend %button;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: $button-background;
+    width: 35px;
+    height: 35px;
     @include background-img($url: "../../assets/images/close-button.svg", $size: 15px);
   }
 }

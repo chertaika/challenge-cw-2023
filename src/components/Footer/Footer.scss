@@ -4,7 +4,7 @@
 
 .footer {
   @extend %main-blocks;
-  background-color: $main-background;
+  background-color: $main-grey;
   display: flex;
   justify-content: space-between;
   align-items: center;

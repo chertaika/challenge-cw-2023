@@ -13,6 +13,13 @@ const apiSettings = {
   },
 };
 
+const typesOfSorting = {
+  title: 'по названию',
+  timestamp: 'по дате',
+  filesize: 'по размеру',
+  category: 'по категории',
+};
+
 const ERROR = 'Ошибка';
 
 export {
@@ -21,4 +28,5 @@ export {
   BASE_URL,
   ELLIPSIS,
   CARDS_PER_PAGE,
+  typesOfSorting,
 };

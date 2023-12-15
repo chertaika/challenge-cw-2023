@@ -1,0 +1,11 @@
+@import "../../styles/mixins";
+@import "../../styles/palette";
+
+.sort-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0 20px;
+  @include font($color: $main-grey, $size: 15px);
+  user-select: none;
+}

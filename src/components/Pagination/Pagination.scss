@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     @extend %link;
-    @include font($size: 15px, $line-height: 1.2);
+    @include font($size: 15px);
   }
 
   &__item_type_arrow-left {
