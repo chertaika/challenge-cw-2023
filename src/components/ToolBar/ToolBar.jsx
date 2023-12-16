@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { typesOfSorting } from '../../utils/constants';
 import SortItem from '../SortItem/SortItem';
 
-const ToolBar = ({ onReset, onSort }) => {
+const ToolBar = ({ onReset, onSort, count }) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState(false);
   const [currentSorting, setCurrentSorting] = useState('');
 
@@ -66,10 +66,13 @@ const ToolBar = ({ onReset, onSort }) => {
           ))}
         </div>
       </div>
-      <button type="button" className="toolbar__reset-btn" onClick={onReset}>
-        Восстановить удаленные
-        <span className="toolbar__reset-icon" />
-      </button>
+      {count > 0 && (
+        <button type="button" className="toolbar__reset-btn" onClick={onReset}>
+          {`Восстановить удаленные${count > 0 ? ` (${count})` : ''}`}
+          <span className="toolbar__reset-icon" />
+        </button>
+      )}
+
     </div>
   );
 };

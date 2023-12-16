@@ -12,15 +12,23 @@ const CardList = ({ cards }) => {
   const [deletedCards, setDeletedCards] = useState(JSON.parse(localStorage.getItem('deletedCards')) ?? []);
 
   const deleteCard = (cardId) => {
-    localStorage.setItem('deletedCards', JSON.stringify([...deletedCards, cardId]));
+    const hiddenCards = [...deletedCards, cardId];
+    localStorage.setItem('deletedCards', JSON.stringify(hiddenCards));
     setDeletedCard(cardId);
-    setTimeout(() => setDeletedCards([...deletedCards, cardId]), 450);
+    setTimeout(() => {
+      if (currentPage > 1) {
+        if (currentPage > Math.ceil((cards.length - hiddenCards.length) / CARDS_PER_PAGE)) {
+          setCurrentPage(currentPage - 1);
+        }
+      }
+      setDeletedCards(hiddenCards);
+      setDeletedCard('');
+    }, 450);
   };
 
   const resetDeletedCards = () => {
     localStorage.removeItem('deletedCards');
     setDeletedCards([]);
-    setDeletedCard('');
   };
 
   const currentTableData = (data = cards) => {
@@ -54,23 +62,27 @@ const CardList = ({ cards }) => {
 
   return (
     <section className="card-list">
-      <ToolBar onReset={resetDeletedCards} onSort={sortCards} />
-      <div className="card-list__container">
-        {currentCards.map(({
-          image, title, date, humanFilesize, category,
-        }) => (
-          <Card
-            key={image}
-            image={image}
-            title={title}
-            date={date}
-            category={category}
-            filesize={humanFilesize}
-            onDelete={deleteCard}
-            isCardDeleted={deletedCard === image}
-          />
-        ))}
-      </div>
+      <ToolBar onReset={resetDeletedCards} onSort={sortCards} count={deletedCards.length} />
+      {cards.length > deletedCards.length
+        ? (
+          <div className="card-list__container">
+            {currentCards.map(({
+              image, title, date, humanFilesize, category,
+            }) => (
+              <Card
+                key={image}
+                image={image}
+                title={title}
+                date={date}
+                category={category}
+                filesize={humanFilesize}
+                onDelete={deleteCard}
+                isCardDeleted={deletedCard === image}
+              />
+            ))}
+          </div>
+        )
+        : (<div className="card-list__message">Нет данных для отображения</div>)}
       <Pagination
         currentPage={currentPage}
         totalCount={cards.length - deletedCards.length}
