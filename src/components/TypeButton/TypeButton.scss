@@ -12,7 +12,7 @@
     width: 15px;
     height: 15px;
 
-    &_type_card {
+    &_type_cards {
       @include background-img($url: "../../assets/images/cards.svg", $size: 15px);
     }
 

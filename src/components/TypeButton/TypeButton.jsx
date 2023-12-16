@@ -14,7 +14,7 @@ const TypeButton = ({ onChange, isChecked }) => (
     />
     <div className="type-button__slider">
       <span className="type-button__option type-button__option_type_tree" />
-      <span className="type-button__option type-button__option_type_card" />
+      <span className="type-button__option type-button__option_type_cards" />
     </div>
   </label>
 );

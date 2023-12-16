@@ -1,7 +1,9 @@
 @import "../../styles/mixins";
 @import "../../styles/palette";
+@import "../../styles/extends";
 
 .sort-item {
+  @extend %link;
   display: flex;
   gap: 5px;
   align-items: center;
