@@ -25,7 +25,6 @@ const ToolBar = ({ onReset, onSort, count }) => {
   };
 
   const handleOverlayClick = (evt) => {
-    console.log(!sortListRef.current.contains(evt.target));
     if (evt.target !== sortListRef.current && !sortListRef.current.contains(evt.target)) {
       closeSortOptions();
     }

@@ -51,8 +51,8 @@ const CardList = ({ cards }) => {
   };
 
   const sortCards = (type) => {
-    const sortedData = cards.sort((a, b) => (a[type] > b[type] ? 1 : -1));
-    currentTableData(sortedData);
+    const sortedCards = cards.slice().sort((a, b) => (a[type] > b[type] ? 1 : -1));
+    currentTableData(sortedCards);
     setCurrentPage(1);
   };
 

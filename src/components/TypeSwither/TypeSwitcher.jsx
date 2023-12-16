@@ -5,8 +5,6 @@ const TypeSwitcher = ({ onChange, activeRadio }) => {
     onChange(evt.target.value);
   };
 
-  console.log(activeRadio === 'card');
-
   return (
     <ul className="type-switcher">
       <li>
