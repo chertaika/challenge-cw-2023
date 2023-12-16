@@ -29,23 +29,23 @@
     object-fit: contain;
     object-position: center;
     display: block;
-  }
 
-  @media screen and (max-width: 650px) {
-    &__company-logo {
-      width: 135px;
-      height: 32px;
+    @media screen and (max-width: 650px) {
+      & {
+        width: 135px;
+        height: 32px;
+      }
     }
   }
 
   &__signature {
     @extend %link;
     @include font($size: 17px, $line-height: 1, $color: $lite-gray);
-  }
 
-  @media screen and (max-width: 650px) {
-    &__signature {
-      font-size: 13px;
+    @media screen and (max-width: 650px) {
+      & {
+        font-size: 13px;
+      }
     }
   }
 }

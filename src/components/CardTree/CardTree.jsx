@@ -4,7 +4,7 @@ import TreeList from '../TreeList/TreeList';
 import TreeItem from '../TreeItem/TreeItem';
 import TreeControl from '../TreeControl/TreeControl';
 
-const CardTree = ({ cards }) => {
+const CardTree = ({ cards, onImageClick }) => {
   const [isOpened, setIsOpened] = useState(true);
 
   const handleClick = () => {
@@ -30,6 +30,7 @@ const CardTree = ({ cards }) => {
                   date={date}
                   fileSize={humanFilesize}
                   key={title}
+                  onImageClick={() => onImageClick(image)}
                 />
               ))}
             </TreeList>

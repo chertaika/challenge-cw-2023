@@ -6,10 +6,20 @@ import { ERROR } from '../../utils/constants';
 import Main from '../Main/Main';
 import useFormatData from '../../hooks/useFormatData';
 import Preloader from '../Preloader/Preloader';
+import ImagePopup from '../ImagePopup/ImagePopup';
 
 const App = () => {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [largerImage, setLargerImage] = useState('');
+
+  const handleImageClick = (image) => {
+    setLargerImage(image);
+  };
+
+  const closePopup = () => {
+    setLargerImage('');
+  };
 
   useEffect(() => {
     setIsLoading(false);
@@ -30,8 +40,9 @@ const App = () => {
       <Header />
       {!isLoading
         ? <Preloader size="large" />
-        : <Main cards={cards} />}
+        : <Main cards={cards} onImageClick={handleImageClick} />}
       <Footer />
+      <ImagePopup image={largerImage} onClose={closePopup} />
     </>
   );
 };

@@ -8,7 +8,6 @@ const TypeButton = ({ onChange, isChecked }) => (
     <input
       className="type-button__checkbox"
       type="checkbox"
-      name="checkbox"
       id="checkbox"
       onChange={onChange}
       checked={isChecked}

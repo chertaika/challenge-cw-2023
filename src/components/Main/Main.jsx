@@ -4,7 +4,7 @@ import CardList from '../CardList/CardList';
 import CardTree from '../CardTree/CardTree';
 import TypeButton from '../TypeButton/TypeButton';
 
-const Main = ({ cards }) => {
+const Main = ({ cards, onImageClick }) => {
   const [treeData, setTreeData] = useState({});
   const [isCardType, setIsCardType] = useState(JSON.parse(localStorage.getItem('isCardType')) ?? true);
 
@@ -32,7 +32,7 @@ const Main = ({ cards }) => {
       <TypeButton onChange={changeDisplayType} isChecked={isCardType} />
       {isCardType
         ? <CardList cards={cards} />
-        : <CardTree cards={treeData} />}
+        : <CardTree cards={treeData} onImageClick={onImageClick} />}
     </main>
   );
 };
