@@ -4,7 +4,7 @@
 
 .card {
   @extend %flex-column;
-  background-color: $card-background;
+  background-color: $gray;
   border-radius: 10px;
   position: relative;
   overflow: hidden;

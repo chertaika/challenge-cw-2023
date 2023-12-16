@@ -6,14 +6,12 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
 
   @media screen and (max-width: 650px) {
     & {
       flex-direction: column;
       gap: 10px;
       align-items: flex-start;
-      padding-top: 0;
     }
   }
 
@@ -69,7 +67,7 @@
 
   &__reset-btn {
     @extend %button;
-    @include font($color: $lite-red, $size: 15px);
+    @include font($color: $lite-gray, $size: 15px);
     background-color: transparent;
     display: flex;
     gap: 5px;

@@ -6,6 +6,6 @@
   gap: 5px;
   align-items: center;
   padding: 0 20px;
-  @include font($color: $main-grey, $size: 15px);
+  @include font($color: $main-gray, $size: 15px);
   user-select: none;
 }

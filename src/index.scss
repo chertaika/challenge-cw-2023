@@ -2,6 +2,16 @@
 @import url(./assets/fonts/Inter/inter.css);
 @import "./styles/palette";
 
+body::-webkit-scrollbar {
+  width: 7px;
+}
+body::-webkit-scrollbar-track {
+  background: $dark-gray;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $gray;
+}
+
 .page {
   width: 100%;
   font-family: 'Inter', Arial, sans-serif;
@@ -16,5 +26,5 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: $main-grey;
+  background-color: $main-gray;
 }

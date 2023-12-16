@@ -1,0 +1,57 @@
+@import "../../styles/palette";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.type-button {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__option {
+    width: 15px;
+    height: 15px;
+
+    &_type_card {
+      @include background-img($url: "../../assets/images/cards.svg", $size: 15px);
+    }
+
+    &_type_tree {
+      @include background-img($url: "../../assets/images/tree.svg", $size: 15px);
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked + .type-button__slider::before {
+      transform: translateX(30px);
+    }
+  }
+
+  &__slider {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 40px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: $lite-gray;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: $white;
+      top: 3px;
+      left: 3px;
+      transition: transform .3s;
+    }
+  }
+}

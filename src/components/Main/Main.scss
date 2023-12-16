@@ -2,8 +2,11 @@
 
 .main {
   @extend %main-blocks;
+  @extend %flex-column;
+  gap: 20px;
   margin-top: 70px;
   margin-bottom: 83px;
+
 
   @media screen and (max-width: 650px) {
     & {
