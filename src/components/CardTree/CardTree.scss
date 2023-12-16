@@ -1,0 +1,22 @@
+@import "../../styles/palette";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.card-tree {
+  @extend %flex-column;
+  gap: 15px;
+
+  &__list {
+    @extend %flex-column;
+    gap: 5px;
+    transition: .5s;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &_opened {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}

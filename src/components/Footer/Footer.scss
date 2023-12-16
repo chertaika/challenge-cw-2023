@@ -40,7 +40,7 @@
 
   &__signature {
     @extend %link;
-    @include font($size: 17px, $line-height: 1, $color: $subtitle);
+    @include font($size: 17px, $line-height: 1, $color: $lite-gray);
   }
 
   @media screen and (max-width: 650px) {

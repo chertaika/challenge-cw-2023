@@ -37,10 +37,10 @@
     height: 15px;
     @include background-img($url: '../../assets/images/down.svg', $size: 15px);
     transition: .5s;
-  }
 
-  &__sort-arrow_active {
-    transform: scale(-1);
+    &_active {
+      transform: scale(-1);
+    }
   }
 
   &__sort-options {
@@ -59,12 +59,12 @@
     overflow: hidden;
     transform-origin: top;
     opacity: 0;
-    transition: height .5s,opacity .7s;;
-  }
+    transition: height .5s,opacity .7s;
 
-  &__sort-options_opened {
-    height: 157px;
-    opacity: 1;
+    &_opened {
+      height: 157px;
+      opacity: 1;
+    }
   }
 
   &__reset-btn {

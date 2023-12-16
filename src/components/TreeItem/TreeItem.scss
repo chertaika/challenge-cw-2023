@@ -1,0 +1,33 @@
+@import "../../styles/palette";
+@import "../../styles/mixins";
+
+.tree-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  background-color: $card-background;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+
+  @media screen and (max-width: 650px) {
+    & {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 120px;
+    aspect-ratio: 3/2;
+    object-position: center;
+    object-fit: contain;
+  }
+
+  &__prop {
+    @include font($size: 16px)
+  }
+
+}

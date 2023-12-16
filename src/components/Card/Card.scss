@@ -34,8 +34,8 @@
     @include font($size: 15px);
   }
 
-  &__option {
-    @include font($size: 13px, $color: $subtitle);
+  &__prop {
+    @include font($size: 13px, $color: $lite-gray);
   }
 
   &__btn-overlay {

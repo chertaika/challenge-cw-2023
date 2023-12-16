@@ -1,0 +1,23 @@
+@import "../../styles/palette";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.tree-list {
+  @extend %flex-column;
+  gap: 10px;
+  margin-left: 10px;
+
+  &__items {
+    @extend %flex-column;
+    gap: 10px;
+    transition: .5s;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &_opened {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}
