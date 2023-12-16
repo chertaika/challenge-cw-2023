@@ -14,5 +14,17 @@
   &__title {
     margin: 0;
     @include font($size: 25px, $weight: 500);
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -13px;
+      @include background-img($url: "../../assets/images/hat.svg", $size: contain);
+      height: 30px;
+      width: 30px;
+      transform: scale(-1, 1);
+    }
   }
 }

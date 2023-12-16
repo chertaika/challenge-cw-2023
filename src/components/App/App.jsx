@@ -22,6 +22,7 @@ const App = () => {
   };
 
   useEffect(() => {
+    console.log('Elecard CW Challenge');
     setIsLoading(false);
     (async () => {
       try {
