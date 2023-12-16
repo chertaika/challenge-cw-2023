@@ -19,18 +19,18 @@ const ImagePopup = ({ image, onClose }) => {
 
   return (
     <div
-      className={`popup ${image && 'popup_opened'}`}
+      className={`image-popup ${image && 'image-popup_opened'}`}
       onClick={handleOverlayClick}
     >
-      <div className="popup__content">
+      <div className="image-popup__content">
         <button
-          className="popup__close-btn"
+          className="image-popup__close-btn"
           onClick={onClose}
           type="button"
           aria-label="Закрыть всплывающее окно"
         />
         <img
-          className="popup__image"
+          className="image-popup__image"
           src={image}
           alt="Имя картинки на языке страницы"
         />

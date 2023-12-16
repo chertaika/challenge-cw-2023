@@ -8,6 +8,7 @@ import ToolBar from '../ToolBar/ToolBar';
 const CardList = ({ cards }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentCards, setCurrentCards] = useState([]);
+  const [sortedCards, setSortedCards] = useState([]);
   const [deletedCard, setDeletedCard] = useState('');
   const [deletedCards, setDeletedCards] = useState(JSON.parse(localStorage.getItem('deletedCards')) ?? []);
 
@@ -31,7 +32,7 @@ const CardList = ({ cards }) => {
     setDeletedCards([]);
   };
 
-  const currentTableData = (data = cards) => {
+  const setCurrentTableData = (data = cards) => {
     const firstPageIndex = (currentPage - 1) * CARDS_PER_PAGE;
     const lastPageIndex = firstPageIndex + CARDS_PER_PAGE;
     if (deletedCards.length) {
@@ -51,14 +52,17 @@ const CardList = ({ cards }) => {
   };
 
   const sortCards = (type) => {
-    const sortedCards = cards.slice().sort((a, b) => (a[type] > b[type] ? 1 : -1));
-    currentTableData(sortedCards);
+    setSortedCards(cards.slice().sort((a, b) => (a[type] > b[type] ? 1 : -1)));
     setCurrentPage(1);
   };
 
   useEffect(() => {
-    currentTableData();
-  }, [currentPage, cards, deletedCards]);
+    if (sortedCards.length) {
+      setCurrentTableData(sortedCards);
+      return;
+    }
+    setCurrentTableData();
+  }, [currentPage, cards, deletedCards, sortedCards]);
 
   return (
     <section className="card-list">

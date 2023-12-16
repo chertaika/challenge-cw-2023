@@ -2,7 +2,7 @@
 @import "../../styles/extends";
 @import "../../styles/mixins";
 
-.popup {
+.image-popup {
   width: 100%;
   min-height: 100%;
   background-color: $popup-background;
@@ -47,7 +47,7 @@
   }
 
   &__image {
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 85vw;
+    max-height: 85vh;
   }
 }
