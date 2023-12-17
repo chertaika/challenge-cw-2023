@@ -2,7 +2,6 @@ import './Main.scss';
 import { useEffect, useState } from 'react';
 import CardList from '../CardList/CardList';
 import CardTree from '../CardTree/CardTree';
-// import TypeButton from '../TypeButton/TypeButton';
 import TypeSwitcher from '../TypeSwither/TypeSwitcher';
 
 const Main = ({ cards, onImageClick }) => {
@@ -22,20 +21,6 @@ const Main = ({ cards, onImageClick }) => {
     setDisplayType(type);
   };
 
-  // функционал для TypeButton с использованием checkbox
-  // const [isCardType, setIsCardType] =
-  // useState(JSON.parse(localStorage.getItem('isCardType')) ?? true);
-  // const changeDisplayType = () => {
-  //   localStorage.setItem('isCardType', JSON.stringify(!isCardType));
-  //   setIsCardType(!isCardType);
-  // };
-  //
-  // useEffect(() => {
-  //   if (!isCardType) {
-  //     transformDataForTree();
-  //   }
-  // }, [isCardType]);
-
   useEffect(() => {
     if (displayType === 'tree') {
       transformDataForTree();
@@ -44,7 +29,6 @@ const Main = ({ cards, onImageClick }) => {
 
   return (
     <main className="main">
-      {/* <TypeButton onChange={changeDisplayType} isChecked={isCardType} /> */}
       <TypeSwitcher onChange={changeDisplayType} activeRadio={displayType} />
       {displayType === 'card'
         ? <CardList cards={cards} />
