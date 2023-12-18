@@ -2,20 +2,32 @@
 @import url(./assets/fonts/Inter/inter.css);
 @import "./styles/palette";
 
-body::-webkit-scrollbar {
-  width: 7px;
+html {
+  scrollbar-width: thin;
 }
-body::-webkit-scrollbar-track {
-  background: $dark-gray;
-}
-body::-webkit-scrollbar-thumb {
-  background-color: $gray;
+
+body {
+  background-color: $main-gray;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $dark-gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray;
+  }
 }
 
 .scroll-blocked {
-  position: fixed;
-  width: 100%;
-  overflow-y: scroll;
+  overflow: hidden;
+
+  @media screen and (hover: hover) {
+    padding-right: 8px;
+  }
 }
 
 .page {
@@ -32,5 +44,4 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: $main-gray;
 }
