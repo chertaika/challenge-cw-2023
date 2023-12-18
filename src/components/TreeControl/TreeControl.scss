@@ -7,6 +7,7 @@
   align-items: center;
   gap: 10px;
   @extend %link;
+  max-width: fit-content;
 
   &__btn {
     flex-shrink: 0;

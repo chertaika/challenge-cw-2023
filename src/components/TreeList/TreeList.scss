@@ -16,7 +16,7 @@
   &__items {
     @extend %flex-column;
     margin-left: 10px;
-    transition: .5s;
+    transition: opacity .5s;
     height: 0;
     opacity: 0;
     overflow: hidden;
