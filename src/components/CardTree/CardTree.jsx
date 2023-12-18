@@ -11,6 +11,8 @@ const CardTree = ({ cards, onImageClick }) => {
     setIsOpened(!isOpened);
   };
 
+  window.addEventListener('DOMMouseScroll', evt => evt.preventDefault(), false);
+
   return (
     <div className="card-tree">
       <TreeControl isOpened={isOpened} onClick={handleClick} title="Категории" />

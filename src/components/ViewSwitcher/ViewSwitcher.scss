@@ -2,7 +2,7 @@
 @import "../../styles/extends";
 @import "../../styles/mixins";
 
-.type-switcher {
+.view-switcher {
   @extend %ul;
   align-self: flex-end;
   display: flex;
@@ -35,7 +35,7 @@
   &__radio {
     display: none;
 
-    &:checked + .type-switcher__icon {
+    &:checked + .view-switcher__icon {
       background-color: $type-background;
     }
   }

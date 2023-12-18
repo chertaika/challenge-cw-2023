@@ -12,6 +12,12 @@ body::-webkit-scrollbar-thumb {
   background-color: $gray;
 }
 
+.scroll-blocked {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
 .page {
   width: 100%;
   font-family: 'Inter', Arial, sans-serif;

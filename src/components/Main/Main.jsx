@@ -2,11 +2,12 @@ import './Main.scss';
 import { useEffect, useState } from 'react';
 import CardList from '../CardList/CardList';
 import CardTree from '../CardTree/CardTree';
-import TypeSwitcher from '../TypeSwither/TypeSwitcher';
+import ViewSwitcher from '../ViewSwitcher/ViewSwitcher';
+import { CARDS_TYPE, TREE_TYPE } from '../../utils/constants';
 
 const Main = ({ cards, onImageClick }) => {
   const [treeData, setTreeData] = useState({});
-  const [displayType, setDisplayType] = useState(localStorage.getItem('displayType') ?? '');
+  const [displayType, setDisplayType] = useState(localStorage.getItem('displayType') ?? CARDS_TYPE);
 
   const transformDataForTree = () => {
     const transformData = cards.reduce((acc, current) => {
@@ -22,15 +23,15 @@ const Main = ({ cards, onImageClick }) => {
   };
 
   useEffect(() => {
-    if (displayType === 'tree') {
+    if (displayType === TREE_TYPE) {
       transformDataForTree();
     }
   }, [displayType]);
 
   return (
     <main className="main">
-      <TypeSwitcher onChange={changeDisplayType} activeRadio={displayType} />
-      {displayType === 'card'
+      <ViewSwitcher onChange={changeDisplayType} activeRadio={displayType} />
+      {displayType === CARDS_TYPE
         ? <CardList cards={cards} />
         : <CardTree cards={treeData} onImageClick={onImageClick} />}
     </main>

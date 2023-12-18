@@ -3,6 +3,10 @@ const BASE_URL = 'http://contest.elecard.ru/frontend_data/';
 
 const ELLIPSIS = '...';
 const CARDS_PER_PAGE = 12;
+
+const CARDS_TYPE = 'cards';
+const TREE_TYPE = 'tree';
+
 const apiSettings = {
   baseUrl: BASE_URL,
   headers: {
@@ -29,4 +33,6 @@ export {
   ELLIPSIS,
   CARDS_PER_PAGE,
   typesOfSorting,
+  CARDS_TYPE,
+  TREE_TYPE,
 };

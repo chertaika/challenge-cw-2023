@@ -10,10 +10,14 @@ const ImagePopup = ({ image, onClose }) => {
     const handleEscClose = (evt) => {
       if (evt.key === 'Escape') onClose();
     };
-    if (image) document.addEventListener('keydown', handleEscClose);
+    if (image) {
+      document.addEventListener('keydown', handleEscClose);
+      document.body.classList.add('scroll-blocked');
+    }
 
     return () => {
       document.removeEventListener('keydown', handleEscClose);
+      document.body.classList.remove('scroll-blocked');
     };
   }, [image]);
 
