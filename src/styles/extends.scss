@@ -3,6 +3,7 @@
   transition: .3s;
   display: block;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   @media screen and (hover: hover) {
     &:hover {
@@ -18,6 +19,7 @@
   cursor: pointer;
   padding: 0;
   background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 
   @media screen and (hover: hover) {
     &:hover {

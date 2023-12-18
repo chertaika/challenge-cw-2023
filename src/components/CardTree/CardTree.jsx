@@ -16,7 +16,7 @@ const CardTree = ({ cards, onImageClick }) => {
   return (
     <div className="card-tree">
       <TreeControl isOpened={isOpened} onClick={handleClick} title="Категории" />
-      <div className={`card-tree__list ${isOpened ? 'card-tree__list_opened' : ''}`}>
+      <section className={`card-tree__list ${isOpened ? 'card-tree__list_opened' : ''}`}>
         {Object.keys(cards)
           .map(keyName => (
             <TreeList title={keyName} key={keyName}>
@@ -37,7 +37,7 @@ const CardTree = ({ cards, onImageClick }) => {
               ))}
             </TreeList>
           ))}
-      </div>
+      </section>
     </div>
   );
 };
