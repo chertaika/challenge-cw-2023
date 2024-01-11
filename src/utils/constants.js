@@ -2,6 +2,8 @@ const DATA_ENDPOINT = 'catalog.json';
 const BASE_URL = 'http://contest.elecard.ru/frontend_data/';
 
 const ELLIPSIS = '...';
+
+const REQUEST_ERROR_MESSAGE = 'Что-то пошло не так... Попробуйте позже.';
 const CARDS_PER_PAGE = 12;
 
 const CARDS_TYPE = 'cards';
@@ -35,4 +37,5 @@ export {
   typesOfSorting,
   CARDS_TYPE,
   TREE_TYPE,
+  REQUEST_ERROR_MESSAGE,
 };

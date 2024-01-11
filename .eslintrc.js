@@ -34,5 +34,6 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
     'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }],
+    'no-param-reassign': ['error', { props: false }],
   },
 };

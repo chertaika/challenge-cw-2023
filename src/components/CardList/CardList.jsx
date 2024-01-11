@@ -1,11 +1,13 @@
 import './CardList.scss';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { CARDS_PER_PAGE } from '../../utils/constants';
 import Card from '../Card/Card';
 import Pagination from '../Pagination/Pagination';
 import ToolBar from '../ToolBar/ToolBar';
 
-const CardList = ({ cards }) => {
+const CardList = () => {
+  const { cards } = useSelector(state => state.cards);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentCards, setCurrentCards] = useState([]);
   const [sortedCards, setSortedCards] = useState([]);

@@ -1,10 +1,13 @@
 import './CardTree.scss';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import TreeList from '../TreeList/TreeList';
 import TreeItem from '../TreeItem/TreeItem';
 import TreeControl from '../TreeControl/TreeControl';
+import transformDataForTree from '../../store/selectors/transformDataForTree';
 
-const CardTree = ({ cards, onImageClick }) => {
+const CardTree = ({ onImageClick }) => {
+  const cards = useSelector(state => transformDataForTree(state.cards));
   const [isOpened, setIsOpened] = useState(true);
 
   const handleClick = () => {
