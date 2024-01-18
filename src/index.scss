@@ -1,24 +1,26 @@
 @import url(./assets/vendor/normalize.css);
 @import url(./assets/fonts/Inter/inter.css);
 @import "./styles/palette";
+@import "./styles/extends";
+@import "./styles/mixins";
 
 html {
   scrollbar-width: thin;
 }
 
 body {
-  background-color: $main-gray;
+  background-color: var(--main-background);
 
   &::-webkit-scrollbar {
     width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background: $dark-gray;
+    background: var(--dark-gray);
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $gray;
+    background-color: var(--mid-gray);
   }
 }
 

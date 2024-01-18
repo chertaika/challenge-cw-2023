@@ -38,7 +38,7 @@
 
     &_selected {
       border-radius: 50%;
-      background-color: $gray;
+      background-color: var(--mid-gray);
       pointer-events:none;
     }
   }

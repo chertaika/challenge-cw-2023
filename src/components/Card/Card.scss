@@ -4,7 +4,7 @@
 
 .card {
   @extend %flex-column;
-  background-color: $gray;
+  background-color: var(--mid-gray);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -35,14 +35,14 @@
   }
 
   &__prop {
-    @include font($size: 13px, $color: $lite-gray);
+    @include font($size: 13px, $color: var(--lite-gray));
   }
 
   &__btn-overlay {
     position: absolute;
     top: 0;
     right: 0;
-    background: linear-gradient(225deg, $button-background 0%, $button-background 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(225deg, var(--button-background) 0%, var(--button-background) 50%, transparent 50%, transparent 100%);
     width: 60px;
     height: 60px;
     display: flex;

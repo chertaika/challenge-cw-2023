@@ -49,7 +49,7 @@
     width: 250px;
     position: absolute;
     top: 25px;
-    background-color: $white;
+    background-color: var(--white);
     box-sizing: border-box;
     z-index: 5;
     border-radius: 10px;
@@ -67,7 +67,7 @@
 
   &__reset-btn {
     @extend %button;
-    @include font($color: $lite-gray, $size: 15px);
+    @include font($color: var(--lite-gray), $size: 15px);
     background-color: transparent;
     display: flex;
     gap: 5px;

@@ -36,7 +36,7 @@
     display: none;
 
     &:checked + .view-switcher__icon {
-      background-color: $type-background;
+      background-color: var(--type-background);
     }
   }
 }

@@ -6,7 +6,7 @@
   $size,
   $line-height: 1.2,
   $weight: 400,
-  $color: $white,
+  $color: var(--white),
 ) {
   margin: 0;
   font-family: ($family, Arial, sans-serif);
