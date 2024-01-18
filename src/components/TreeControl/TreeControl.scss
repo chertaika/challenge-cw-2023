@@ -10,6 +10,7 @@
   max-width: fit-content;
 
   &__btn {
+    fill: var(--tree-btn);
     flex-shrink: 0;
     @extend %button;
     background-color: var(--lite-gray);
@@ -19,11 +20,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include background-img($url: '../../assets/images/plus.svg', $size: 10px);
-
-    &_active {
-      background-image: url("../../assets/images/minus.svg");
-    }
   }
 
   &__title {

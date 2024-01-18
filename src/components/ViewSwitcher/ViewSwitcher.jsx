@@ -18,7 +18,14 @@ const ViewSwitcher = ({ onChange, activeRadio }) => {
             checked={activeRadio === CARDS_TYPE}
             onChange={handleChangeType}
           />
-          <span className="view-switcher__icon view-switcher__icon_type_cards" />
+          <span className="view-switcher__icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M0 0h7v7h-7v-7z" />
+              <path d="M9 0h7v7h-7v-7z" />
+              <path d="M0 9h7v7h-7v-7z" />
+              <path d="M9 9h7v7h-7v-7z" />
+            </svg>
+          </span>
         </label>
       </li>
       <li>
@@ -31,7 +38,11 @@ const ViewSwitcher = ({ onChange, activeRadio }) => {
             checked={activeRadio === TREE_TYPE}
             onChange={handleChangeType}
           />
-          <span className="view-switcher__icon view-switcher__icon_type_tree" />
+          <span className="view-switcher__icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M16 10v-4h-11v1h-2v-3h9v-4h-12v4h2v10h3v2h11v-4h-11v1h-2v-5h2v2z" />
+            </svg>
+          </span>
         </label>
       </li>
     </ul>

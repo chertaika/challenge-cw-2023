@@ -28,6 +28,7 @@
     object-fit: contain;
     object-position: center;
     display: block;
+    fill: var(--svg-icon);
 
     @media screen and (max-width: 650px) {
       & {

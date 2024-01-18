@@ -22,14 +22,7 @@
     padding: 7px;
     border-radius: 5px;
     transition: .3s;
-
-    &_type_cards {
-      @include background-img($url: "../../assets/images/cards-lite.svg", $size: 15px);
-    }
-
-    &_type_tree {
-      @include background-img($url: "../../assets/images/tree-lite.svg", $size: 15px);
-    }
+    fill: var(--svg-icon);
   }
 
   &__radio {
